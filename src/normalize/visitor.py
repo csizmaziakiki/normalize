@@ -19,11 +19,11 @@ from __future__ import absolute_import
 from builtins import object
 import collections
 
-from normalize.coll import Collection
-import normalize.exc as exc
-from normalize.record import Record
-from normalize.selector import FieldSelector
-from normalize.selector import MultiFieldSelector
+from src.normalize.coll import Collection
+import src.normalize.exc as exc
+from src.normalize.record import Record
+from src.normalize.selector import FieldSelector
+from src.normalize.selector import MultiFieldSelector
 
 
 class Visitor(object):
@@ -99,7 +99,7 @@ class Visitor(object):
 
     def pop(self, what=None):
         if what is not None:
-            assert(self.cue[-1] == what)
+            assert (self.cue[-1] == what)
         return self.cue.pop()
 
     def copy(self):
@@ -257,7 +257,7 @@ class VisitorPattern(object):
 
         args:
 
-            ``value=`` *value* \| *AttributeError* \| *KeyError*
+            ``value=`` *value* \\| *AttributeError* \\| *KeyError*
                 This is the value currently in the slot, or the Record itself
                 with the ``apply_records`` visitor option.  *AttributeError*
                 will only be received if you passed ``apply_empty_slots``, and
@@ -265,7 +265,7 @@ class VisitorPattern(object):
                 :py:meth:`Visitor.map_prop` for details about when this might
                 happen)
 
-            ``prop=`` *Property* \| ``None``
+            ``prop=`` *Property* \\| ``None``
                 This is the :py:class:`normalize.Property` instance which
                 represents the field being traversed.
 

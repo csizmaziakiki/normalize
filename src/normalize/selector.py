@@ -22,11 +22,11 @@ from copy import deepcopy
 import functools
 import re
 
-from normalize.coll import DictCollection
-from normalize.coll import ListCollection
-from normalize.exc import FieldSelectorAttributeError
-from normalize.exc import FieldSelectorException
-from normalize.exc import FieldSelectorKeyError
+from src.normalize.coll import DictCollection
+from src.normalize.coll import ListCollection
+from src.normalize.exc import FieldSelectorAttributeError
+from src.normalize.exc import FieldSelectorException
+from src.normalize.exc import FieldSelectorKeyError
 
 
 def _try_index(instance, selector):
@@ -56,7 +56,7 @@ class FieldSelector(object):
 
         args:
 
-            ``expr=`` *FieldSelector* \| *<iterable>*
+            ``expr=`` *FieldSelector* \\| *<iterable>*
                 Starting expression for the selector; can copy an existing
                 FieldSelector or instantiate one from an iterable list of
                 attribute names/indices
@@ -461,7 +461,7 @@ class FieldSelector(object):
 
         args:
 
-            ``key_or_fs=`` *FieldSelector* \| *<attribute-or-index>*
+            ``key_or_fs=`` *FieldSelector* \\| *<attribute-or-index>*
 
                 If the argument is another FieldSelector (or a tuple/list), it
                 checks that the invocant's first selector expression components
@@ -514,7 +514,7 @@ _PATH_TOK = re.compile(
     r'''\.(?P<attr>\w+)|
         \[(?:
             (?P<idx>\d+)|
-            (?P<wild>\*)|
+            (?P<wild>\\*)|
             '(?P<key>(?:[^']+|\\')*)'
         )\]''',
     re.X,
@@ -568,7 +568,7 @@ class MultiFieldSelector(object):
 
         args:
 
-            ``*others=`` *FieldSelector* \| *iterable*
+            ``*others=`` *FieldSelector* \\| *iterable*
 
                 Each argument is interpreted as either a FieldSelector, or a
                 FieldSelector constructor.
@@ -880,7 +880,7 @@ class MultiFieldSelector(object):
             ``source=`` *OBJECT*
                 the object to lift the fields from
 
-            ``copy=`` *BOOL* \| *FUNCTION*
+            ``copy=`` *BOOL* \\| *FUNCTION*
                 deep copy the values set, using copy.deepcopy (or the passed
                 function).  False by default.
         """
@@ -921,7 +921,7 @@ _MFS_PATH_TOK = re.compile(
     r'''\.(?P<attr>\w+)|
         \[(?:
             (?P<idx>\d+)|
-            (?P<wild>\*)|
+            (?P<wild>\\*)|
             '(?P<key>(?:[^']+|\\')*)'
         )\]|
         (?P<branch>[()|])

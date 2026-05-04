@@ -20,12 +20,12 @@ from datetime import datetime
 import sys
 import unittest
 
-import normalize.exc as exc
-from normalize.record import Record
-from normalize.property import Property
-from normalize.property import SafeProperty
-from normalize.property.types import *
-from normalize.subtype import subtype
+import src.normalize.exc as exc
+from src.normalize.record import Record
+from src.normalize.property import Property
+from src.normalize.property import SafeProperty
+from src.normalize.property.types import *
+from src.normalize.subtype import subtype
 
 
 class TestTypeLibrary(unittest.TestCase):
@@ -127,7 +127,7 @@ class TestTypeLibrary(unittest.TestCase):
         p.integer = 1e20
         self.assertEqual(p.integer, 100000000000000000000)
 
-        from normalize import from_json, to_json
+        from src.normalize import from_json, to_json
         p2 = from_json(Props, to_json(p))
         self.assertEqual(p, p2)
 

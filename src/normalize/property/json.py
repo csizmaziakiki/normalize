@@ -17,10 +17,10 @@
 from __future__ import absolute_import
 
 from builtins import object
-from normalize.property import Property
-from normalize.property import SafeProperty
-from normalize.property.coll import DictProperty
-from normalize.property.coll import ListProperty
+from src.normalize.property import Property
+from src.normalize.property import SafeProperty
+from src.normalize.property.coll import DictProperty
+from src.normalize.property.coll import ListProperty
 
 
 class _Default(object):
@@ -85,7 +85,7 @@ class JsonProperty(Property):
             return self.json_out(propval)
         else:
             if not to_json_func:
-                from normalize.record.json import to_json
+                from src.normalize.record.json import to_json
                 to_json_func = to_json
             return to_json_func(propval, extraneous)
 
@@ -100,8 +100,8 @@ class SafeJsonProperty(JsonProperty, SafeProperty):
 
 
 # late imports to allow circular dependencies to proceed
-from normalize.record.json import JsonRecordDict  # noqa
-from normalize.record.json import JsonRecordList  # noqa
+from src.normalize.record.json import JsonRecordDict  # noqa
+from src.normalize.record.json import JsonRecordList  # noqa
 
 
 class JsonListProperty(ListProperty, JsonProperty):

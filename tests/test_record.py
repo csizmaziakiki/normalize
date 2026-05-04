@@ -22,12 +22,12 @@ from datetime import datetime
 import unittest
 import warnings
 
-from normalize import ListProperty
-from normalize import Property
-from normalize import Record
-from normalize import V1Property
-import normalize.exc as exc
-from normalize.visitor import VisitorPattern
+from src.normalize import ListProperty
+from src.normalize import Property
+from src.normalize import Record
+from src.normalize import V1Property
+import src.normalize.exc as exc
+from src.normalize.visitor import VisitorPattern
 
 
 class TestRecords(unittest.TestCase):

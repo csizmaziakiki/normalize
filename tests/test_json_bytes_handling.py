@@ -10,12 +10,12 @@ import unittest
 
 # Import directly from modules to avoid normalize.__init__ -> diff ->
 # richenum chain
-from normalize.record.json import _decode_and_parse_json
-from normalize.record.json import JsonRecord
-from normalize.record.json import JsonRecordList
-from normalize.record.json import JsonRecordDict
-from normalize.record.json import from_json
-from normalize.property.json import JsonProperty
+from src.normalize.record.json import _decode_and_parse_json
+from src.normalize.record.json import JsonRecord
+from src.normalize.record.json import JsonRecordList
+from src.normalize.record.json import JsonRecordDict
+from src.normalize.record.json import from_json
+from src.normalize.property.json import JsonProperty
 from json import JSONDecodeError
 
 

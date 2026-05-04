@@ -15,12 +15,12 @@
 #
 
 
-from normalize.coll import DictCollection
-from normalize.coll import ListCollection
-from normalize.coll import _make_generic
-import normalize.exc as exc
-from normalize.property import Property
-from normalize.property import SafeProperty
+from src.normalize.coll import DictCollection
+from src.normalize.coll import ListCollection
+from src.normalize.coll import _make_generic
+import src.normalize.exc as exc
+from src.normalize.property import Property
+from src.normalize.property import SafeProperty
 
 
 class CollectionProperty(Property):

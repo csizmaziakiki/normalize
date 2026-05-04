@@ -1,6 +1,6 @@
 
 from builtins import str, object
-import normalize
+import src.normalize as normalize
 
 
 EMPTY_VALS = dict()

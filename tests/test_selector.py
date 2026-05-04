@@ -21,19 +21,19 @@ from datetime import datetime
 import re
 import unittest
 
-from normalize import FieldSelector
-from normalize import FieldSelectorException
-from normalize import JsonCollectionProperty
-from normalize import JsonProperty
-from normalize import JsonRecord
-from normalize import JsonRecordList
-from normalize import Property
-from normalize import Record
-from normalize import RecordList
-from normalize.coll import list_of
-from normalize.property.coll import DictProperty
-from normalize.property.coll import ListProperty
-from normalize.selector import MultiFieldSelector
+from src.normalize import FieldSelector
+from src.normalize import FieldSelectorException
+from src.normalize import JsonCollectionProperty
+from src.normalize import JsonProperty
+from src.normalize import JsonRecord
+from src.normalize import JsonRecordList
+from src.normalize import Property
+from src.normalize import Record
+from src.normalize import RecordList
+from src.normalize.coll import list_of
+from src.normalize.property.coll import DictProperty
+from src.normalize.property.coll import ListProperty
+from src.normalize.selector import MultiFieldSelector
 
 from .testclasses import Person, wall_one
 
@@ -359,7 +359,7 @@ class TestStructableFieldSelector(unittest.TestCase):
         self.assertEqual(oo, OtherObj(objs=[]))
 
     def test_dict(self):
-        from normalize.coll import dict_of
+        from src.normalize.coll import dict_of
         Rolodeck = dict_of(Person)
 
         deck = Rolodeck({
@@ -465,11 +465,11 @@ class TestStructableFieldSelector(unittest.TestCase):
                       (?:
                           (?: \[0\] \(
                               (?:
-                                  (?: .hiss | .boo ) \|?
+                                  (?: .hiss | .boo ) \\|?
                               ){2} \)
-                            | \[1\] ) \|?
+                            | \[1\] ) \\|?
                       ){2} \)
-                    | .bar ) \|?
+                    | .bar ) \\|?
                 ){2}
             \)>""", re.X,
         )
@@ -684,7 +684,7 @@ class TestStructableFieldSelector(unittest.TestCase):
 
     def test_mfs_apply_ops(self):
         from copy import deepcopy
-        from normalize.diff import DiffTypes
+        from src.normalize.diff import DiffTypes
 
         selectors = (
             ("owner",),

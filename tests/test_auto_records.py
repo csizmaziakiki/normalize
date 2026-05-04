@@ -23,12 +23,12 @@ import os.path
 import unittest
 import warnings
 
-from normalize import ListProperty
-from normalize import Property
-from normalize import Record
-from normalize import AutoJsonRecord
-from normalize import NCAutoJsonRecord
-import normalize.exc as exc
+from src.normalize import ListProperty
+from src.normalize import Property
+from src.normalize import Record
+from src.normalize import AutoJsonRecord
+from src.normalize import NCAutoJsonRecord
+import src.normalize.exc as exc
 
 
 class TestAutoRecords(unittest.TestCase):

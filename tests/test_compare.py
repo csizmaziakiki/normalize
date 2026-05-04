@@ -19,15 +19,15 @@ from __future__ import absolute_import
 from builtins import str
 import unittest
 
-from normalize.coll import list_of
-from normalize.diff import *
-from normalize.record import Record
-from normalize.record.json import JsonRecord
-from normalize.property import Property
-from normalize.property.coll import DictProperty
-from normalize.property.coll import ListProperty
-from normalize.property.json import JsonProperty
-from normalize.property.json import JsonListProperty
+from src.normalize.coll import list_of
+from src.normalize.diff import *
+from src.normalize.record import Record
+from src.normalize.record.json import JsonRecord
+from src.normalize.property import Property
+from src.normalize.property.coll import DictProperty
+from src.normalize.property.coll import ListProperty
+from src.normalize.property.json import JsonProperty
+from src.normalize.property.json import JsonListProperty
 
 from .testclasses import (
     LegalPerson,

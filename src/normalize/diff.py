@@ -25,15 +25,15 @@ from builtins import object, range
 from richenum import OrderedRichEnum
 from richenum import OrderedRichEnumValue
 
-import normalize.exc as exc
-from normalize.property import SafeProperty
-from normalize.coll import Collection
-from normalize.coll import DictCollection
-from normalize.coll import ListCollection
-from normalize.record import Record
-from normalize.record import record_id
-from normalize.selector import FieldSelector
-from normalize.selector import MultiFieldSelector
+import src.normalize.exc as exc
+from src.normalize.property import SafeProperty
+from src.normalize.coll import Collection
+from src.normalize.coll import DictCollection
+from src.normalize.coll import ListCollection
+from src.normalize.record import Record
+from src.normalize.record import record_id
+from src.normalize.selector import FieldSelector
+from src.normalize.selector import MultiFieldSelector
 
 
 class DiffTypes(OrderedRichEnum):
@@ -179,7 +179,7 @@ class DiffOptions(object):
                 Enable approximate matching of items in collections, so that
                 finer granularity of changes are available.
 
-            ``compare_filter=`` *MULTIFIELDSELECTOR* \| *LIST_OF_LISTS*
+            ``compare_filter=`` *MULTIFIELDSELECTOR* \\| *LIST_OF_LISTS*
                 Restrict comparison to the fields described by the passed
                 :py:class:`MultiFieldSelector` (or list of FieldSelector
                 lists/objects)
@@ -273,7 +273,7 @@ class DiffOptions(object):
 
         args:
 
-            ``value=`` *nothing* \| *anything*
+            ``value=`` *nothing* \\| *anything*
                 The value in the slot.  *nothing* can be detected in sub-class
                 methods as ``self._nothing``.
 
@@ -306,7 +306,7 @@ class DiffOptions(object):
 
         args:
 
-            ``value=`` *nothing* \| *anything*
+            ``value=`` *nothing* \\| *anything*
                 The value in the collection slot.  *nothing* can be detected in
                 sub-class methods as ``self._nothing``.
 
@@ -364,21 +364,21 @@ def compare_record_iter(a, b, fs_a=None, fs_b=None, options=None):
         ``a=`` *Record*
             The base object
 
-        ``b=`` *Record* \| *object*
+        ``b=`` *Record* \\| *object*
             The 'other' object, which must be the same type as ``a``, unless
             ``options.duck_type`` is set.
 
-        ``fs_a=`` *FieldSelector\*
+        ``fs_a=`` *FieldSelector\\*
             The current diff context, prefixed to any returned ``base`` field
             in yielded ``DiffInfo`` objects.  Defaults to an empty
             FieldSelector.
 
-        ``fs_b=`` *FieldSelector\*
+        ``fs_b=`` *FieldSelector\\*
             The ``other`` object context.  This will differ from ``fs_a`` in
             the case of collections, where a value has moved slots.  Defaults
             to an empty FieldSelector.
 
-        ``options=`` *DiffOptions\*
+        ``options=`` *DiffOptions\\*
             A constructed ``DiffOptions`` object; a default one is created if
             not passed in.
     """
@@ -447,7 +447,7 @@ def compare_record_iter(a, b, fs_a=None, fs_b=None, options=None):
             if one_side_nothing:
                 net_diff = None
                 if diff_types_found:
-                    assert(len(diff_types_found) == 1)
+                    assert (len(diff_types_found) == 1)
                     net_diff = tuple(diff_types_found)[0]
                 elif options.unchanged:
                     net_diff = DiffTypes.NO_CHANGE
@@ -980,7 +980,7 @@ def diff_iter(base, other, options=None, **kwargs):
             The 'base' object to compare against.  The enumeration in
             :py:class:`DiffTypes` is relative to this object.
 
-        ``other=`` *Record* \| *<object>*
+        ``other=`` *Record* \\| *<object>*
             The 'other' object to compare against.  If ``duck_type`` is not
             true, then it must be of the same type as the ``base``.
 

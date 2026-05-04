@@ -23,8 +23,8 @@ import types
 
 from builtins import range, object
 
-import normalize.exc as exc
-from normalize.record import Record
+import src.normalize.exc as exc
+from src.normalize.record import Record
 
 """This class contains container classes which can act like collections but
 conform to this package's metaclass API"""
@@ -486,7 +486,7 @@ def _make_generic(of, coll):
             The container class.
     """
 
-    assert(issubclass(coll, Collection))
+    assert (issubclass(coll, Collection))
     key = (coll.__name__, "%s.%s" % (of.__module__, of.__name__))
     if key in GENERIC_TYPES:
         if GENERIC_TYPES[key].itemtype != of:

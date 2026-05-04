@@ -17,17 +17,17 @@ from builtins import object
 import copy
 from datetime import datetime
 
-from normalize import RecordList
-from normalize.coll import list_of
-from normalize.record import Record
-from normalize.record.json import JsonRecordList
-from normalize.property import Property
-from normalize.property import SafeProperty
-from normalize.property.coll import DictProperty
-from normalize.property.coll import ListProperty
-from normalize.property.types import DatetimeProperty
-from normalize.property.types import FloatProperty
-from normalize.property.types import StringProperty
+from src.normalize import RecordList
+from src.normalize.coll import list_of
+from src.normalize.record import Record
+from src.normalize.record.json import JsonRecordList
+from src.normalize.property import Property
+from src.normalize.property import SafeProperty
+from src.normalize.property.coll import DictProperty
+from src.normalize.property.coll import ListProperty
+from src.normalize.property.types import DatetimeProperty
+from src.normalize.property.types import FloatProperty
+from src.normalize.property.types import StringProperty
 
 
 class LegalPerson(Record):
