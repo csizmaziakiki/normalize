@@ -155,11 +155,11 @@ class Record(metaclass=RecordMeta):
 
         args:
 
-            ``other=``\ *Record*\ \|\ *Anything*
+            ``other=`` *Record* \| *Anything*
                  The thing to compare against; the types must match, unless
                  ``duck_type=True`` is passed.
 
-            *diff_option*\ =\ *value*
+            *diff_option* = *value*
                  Unknown keyword arguments are eventually passed to a
                  :ref:`DiffOptions` constructor.
         """
