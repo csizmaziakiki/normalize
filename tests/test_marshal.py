@@ -102,7 +102,7 @@ class TestRecordMarshaling(unittest.TestCase):
 
         pdisp = path or "top level"
 
-        if type(got) is not type(wanted):
+        if type(got) != type(wanted):  # noqa: E721
             if isinstance(got, json_data_number_types) and \
                     isinstance(wanted, json_data_number_types):
                 got = decode_json_number(got)
@@ -113,7 +113,7 @@ class TestRecordMarshaling(unittest.TestCase):
                         pdisp, type(wanted).__name__, type(got).__name__
                     )
                 )
-        if type(got) is dict:
+        if type(got) == dict:  # noqa: E721
             all_keys = sorted(set(got) | set(wanted))
             for key in all_keys:
                 if (key in got) != (key in wanted):
@@ -127,7 +127,7 @@ class TestRecordMarshaling(unittest.TestCase):
                     self.assertJsonDataEqual(
                         got[key], wanted[key], path + ("[%r]" % key)
                     )
-        elif type(got) is list:
+        elif type(got) == list:  # noqa: E721
             for i in range(0, max((len(got), len(wanted)))):
                 if i >= len(got) or i >= len(wanted):
                     raise AssertionError(

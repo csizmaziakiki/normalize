@@ -121,7 +121,7 @@ class Record(metaclass=RecordMeta):
         equality (except those marked 'extraneous').  See also
         :py:meth:`diff` for a version where the comparison can be
         fine-tuned."""
-        if type(self) is not type(other):
+        if type(self) != type(other):  # noqa: E721
             return False
         for propname, prop in type(self).properties.items():
             if not prop.extraneous:

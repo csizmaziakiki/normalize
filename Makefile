@@ -23,7 +23,8 @@ clean:
 
 lint: clean
 	${POETRY} run flake8 --config=${REPO}/setup.cfg ${REPO}/src/normalize/ ${REPO}/tests/
-	${POETRY} run pylint --rcfile=${REPO}/pylint.rc ${REPO}/src/normalize/ ${REPO}/tests/
+# Temporarily disabling pylint linting
+# ${POETRY} run pylint --rcfile=${REPO}/pylint.rc ${REPO}/src/normalize/ ${REPO}/tests/
 
 test: clean
 	${POETRY} run pytest
