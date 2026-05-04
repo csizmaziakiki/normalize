@@ -23,8 +23,8 @@ import types
 
 from builtins import range, object
 
-import src.normalize.exc as exc
-from src.normalize.record import Record
+import normalize.exc as exc
+from normalize.record import Record
 
 """This class contains container classes which can act like collections but
 conform to this package's metaclass API"""

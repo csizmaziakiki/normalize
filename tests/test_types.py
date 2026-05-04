@@ -126,7 +126,7 @@ class TestTypeLibrary(unittest.TestCase):
         p.integer = 1e20
         self.assertEqual(p.integer, 100000000000000000000)
 
-        from src.normalize import from_json, to_json
+        from normalize import from_json, to_json
         p2 = from_json(Props, to_json(p))
         self.assertEqual(p, p2)
 

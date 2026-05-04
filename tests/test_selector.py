@@ -21,15 +21,15 @@ from datetime import datetime
 import re
 import unittest
 
-from src.normalize import FieldSelector
-from src.normalize import FieldSelectorException
-from src.normalize import JsonCollectionProperty
-from src.normalize import JsonProperty
-from src.normalize import JsonRecord
-from src.normalize import JsonRecordList
-from src.normalize import Property
-from src.normalize import Record
-from src.normalize import RecordList
+from normalize import FieldSelector
+from normalize import FieldSelectorException
+from normalize import JsonCollectionProperty
+from normalize import JsonProperty
+from normalize import JsonRecord
+from normalize import JsonRecordList
+from normalize import Property
+from normalize import Record
+from normalize import RecordList
 from normalize.coll import list_of
 from normalize.property.coll import DictProperty
 from normalize.property.coll import ListProperty
@@ -93,12 +93,12 @@ class TestStructableFieldSelector(unittest.TestCase):
         self.assertEqual(repr(fs), "FieldSelector(['foo', 7, 'bar'])")
 
         # Test invalid FieldSelectors
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             ValueError, "FieldSelectors can only contain ints/longs, "
             "strings, and None"
         ):
             FieldSelector(iter({"foo": "bar"}.items()))
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             ValueError, "FieldSelectors can only contain ints/longs, "
             "strings, and None"
         ):
@@ -129,7 +129,7 @@ class TestStructableFieldSelector(unittest.TestCase):
         fs.add_property("prop_name")
         self.assertEqual(fs.selectors, ["foo", "bar", "prop_name"])
 
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             ValueError, "properties must be specified by their string name",
         ):
             fs.add_property({})
@@ -143,7 +143,7 @@ class TestStructableFieldSelector(unittest.TestCase):
         fs.add_index(0)
         self.assertEqual(fs.selectors, ["foo", "bar", 0])
 
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             ValueError, "index must be an int or a long"
         ):
             fs.add_index(0.0)
@@ -200,14 +200,14 @@ class TestStructableFieldSelector(unittest.TestCase):
 
         # test invalid selectors
         fs = FieldSelector(["bad_name"])  # bad property name
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             FieldSelectorException, "Could not find property specified "
             "by name: bad_name"
         ):
             fs.get(record)
         self.assertIsNone(fs.get_or_none(record))
         fs = FieldSelector(["children", 10])  # bad index
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             FieldSelectorException, "Could not find Record specified by "
             "index: 10"
         ):
@@ -215,7 +215,7 @@ class TestStructableFieldSelector(unittest.TestCase):
         self.assertIsNone(fs.get_or_none(record))
         # bad nested property name
         fs = FieldSelector(["children", 1, "bad_name"])
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             FieldSelectorException, "Could not find property specified "
             "by name: bad_name"
         ):
@@ -276,7 +276,7 @@ class TestStructableFieldSelector(unittest.TestCase):
 
         # Test invalid addition to collection
         fs = FieldSelector(["children", 9999, "name"])
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             ValueError, "FieldSelector set out of order"
         ):
             fs.post(record, "Joker")
@@ -370,7 +370,7 @@ class TestStructableFieldSelector(unittest.TestCase):
 
         fs1 = FieldSelector(["bob", "id"])
         self.assertEqual(fs1.get(deck), 123)
-        self.assertRaisesRegexp(
+        self.assertRaisesRegex(
             ValueError, r'id is required', fs1.delete, deck,
         )
 
@@ -414,7 +414,7 @@ class TestStructableFieldSelector(unittest.TestCase):
 
         fs1 = FieldSelector(["foo", 0])
         fs2 = FieldSelector(["foo", "bar"])
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             TypeError, "Cannot compare incompatible FieldSelectors. "
             "Incompatibility detected at index: 1 for selectors: .* and .*"
         ):
@@ -465,15 +465,15 @@ class TestStructableFieldSelector(unittest.TestCase):
                       (?:
                           (?: \[0\] \(
                               (?:
-                                  (?: .hiss | .boo ) \\|?
+                                  (?: .hiss | .boo ) \|?
                               ){2} \)
-                            | \[1\] ) \\|?
+                            | \[1\] ) \|?
                       ){2} \)
-                    | .bar ) \\|?
+                    | .bar ) \|?
                 ){2}
             \)>""", re.X,
         )
-        self.assertRegexpMatches(str(mfs), regexp)
+        self.assertRegex(str(mfs), regexp)
         mfs_dupe = eval(repr(mfs))
         emitted = set(tuple(x.selectors) for x in mfs_dupe)
         self.assertEqual(emitted, selectors)

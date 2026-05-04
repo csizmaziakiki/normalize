@@ -24,17 +24,17 @@ import inspect
 import json
 import re
 
-from src.normalize.coll import Collection
-from src.normalize.coll import DictCollection as RecordDict
-from src.normalize.coll import ListCollection as RecordList
-from src.normalize.coll import list_of
-from src.normalize.diff import Diff
-from src.normalize.diff import DiffInfo
-import src.normalize.exc as exc
-from src.normalize.property.json import JsonProperty
-from src.normalize.record import OhPickle
-from src.normalize.record import Record
-from src.normalize.selector import FieldSelector
+from normalize.coll import Collection
+from normalize.coll import DictCollection as RecordDict
+from normalize.coll import ListCollection as RecordList
+from normalize.coll import list_of
+from normalize.diff import Diff
+from normalize.diff import DiffInfo
+import normalize.exc as exc
+from normalize.property.json import JsonProperty
+from normalize.record import OhPickle
+from normalize.record import Record
+from normalize.selector import FieldSelector
 
 
 def _json_to_value_initializer(json_val, proptype):

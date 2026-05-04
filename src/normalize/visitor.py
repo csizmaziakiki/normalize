@@ -19,11 +19,11 @@ from __future__ import absolute_import
 from builtins import object
 import collections
 
-from src.normalize.coll import Collection
-import src.normalize.exc as exc
-from src.normalize.record import Record
-from src.normalize.selector import FieldSelector
-from src.normalize.selector import MultiFieldSelector
+from normalize.coll import Collection
+import normalize.exc as exc
+from normalize.record import Record
+from normalize.selector import FieldSelector
+from normalize.selector import MultiFieldSelector
 
 
 class Visitor(object):

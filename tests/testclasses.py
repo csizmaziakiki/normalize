@@ -17,7 +17,7 @@ from builtins import object
 import copy
 from datetime import datetime
 
-from src.normalize import RecordList
+from normalize import RecordList
 from normalize.coll import list_of
 from normalize.record import Record
 from normalize.record.json import JsonRecordList

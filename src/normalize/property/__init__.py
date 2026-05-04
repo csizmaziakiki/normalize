@@ -30,10 +30,10 @@ import inspect
 import warnings
 import weakref
 
-import src.normalize.empty as empty
-import src.normalize.exc as exc
-from src.normalize.property.meta import looks_like_v1_none
-from src.normalize.property.meta import MetaProperty
+import normalize.empty as empty
+import normalize.exc as exc
+from normalize.property.meta import looks_like_v1_none
+from normalize.property.meta import MetaProperty
 
 
 class _Default(object):

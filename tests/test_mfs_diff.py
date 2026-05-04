@@ -21,9 +21,9 @@ from datetime import date
 import re
 import unittest
 
-from src.normalize import Property
-from src.normalize import Record
-from src.normalize import RecordList
+from normalize import Property
+from normalize import Record
+from normalize import RecordList
 from normalize.diff import DiffOptions
 from normalize.property.coll import ListProperty
 from normalize.property.types import DateProperty

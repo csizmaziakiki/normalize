@@ -22,11 +22,11 @@ from copy import deepcopy
 import functools
 import re
 
-from src.normalize.coll import DictCollection
-from src.normalize.coll import ListCollection
-from src.normalize.exc import FieldSelectorAttributeError
-from src.normalize.exc import FieldSelectorException
-from src.normalize.exc import FieldSelectorKeyError
+from normalize.coll import DictCollection
+from normalize.coll import ListCollection
+from normalize.exc import FieldSelectorAttributeError
+from normalize.exc import FieldSelectorException
+from normalize.exc import FieldSelectorKeyError
 
 
 def _try_index(instance, selector):

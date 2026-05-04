@@ -16,9 +16,9 @@
 
 from __future__ import absolute_import
 
-import src.normalize.exc as exc
-from src.normalize.identity import record_id
-from src.normalize.record.meta import RecordMeta
+import normalize.exc as exc
+from normalize.identity import record_id
+from normalize.record.meta import RecordMeta
 
 
 class _Unset:
@@ -163,7 +163,7 @@ class Record(metaclass=RecordMeta):
                  Unknown keyword arguments are eventually passed to a
                  :ref:`DiffOptions` constructor.
         """
-        from src.normalize.diff import diff_iter
+        from normalize.diff import diff_iter
         return diff_iter(self, other, **kwargs)
 
     def diff(self, other, **kwargs):
@@ -171,7 +171,7 @@ class Record(metaclass=RecordMeta):
         object.  Accepts the same arguments as
         :py:meth:`normalize.record.Record.diff_iter`
         """
-        from src.normalize.diff import diff
+        from normalize.diff import diff
         return diff(self, other, **kwargs)
 
 

@@ -15,9 +15,9 @@
 #
 
 from builtins import str
-import src.normalize.coll
-import src.normalize.exc as exc
-import src.normalize.record
+import normalize.coll
+import normalize.exc as exc
+import normalize.record
 
 
 def record_id(object_, type_=None, selector=None, normalize_object_slot=None):
@@ -49,7 +49,7 @@ def record_id(object_, type_=None, selector=None, normalize_object_slot=None):
         pk_cols = None
 
     if not pk_cols and issubclass(
-        type_, src.normalize.coll.Collection
+        type_, normalize.coll.Collection
     ):
         # FIXME: unordered collections will rarely match each other
         gen = (
@@ -88,7 +88,7 @@ def record_id(object_, type_=None, selector=None, normalize_object_slot=None):
             val_pk = ()
             set_elements = 0
             for value_type in value_type_list:
-                if issubclass(value_type, src.normalize.record.Record):
+                if issubclass(value_type, normalize.record.Record):
                     pk = record_id(val, value_type,
                                    selector[prop.name] if selector else None,
                                    normalize_object_slot)

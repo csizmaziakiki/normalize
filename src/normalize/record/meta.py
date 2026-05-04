@@ -17,8 +17,8 @@
 
 from __future__ import absolute_import
 
-import src.normalize.exc as exc
-from src.normalize.property import Property
+import normalize.exc as exc
+from normalize.property import Property
 
 
 class RecordMeta(type):

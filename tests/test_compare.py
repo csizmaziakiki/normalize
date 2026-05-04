@@ -521,7 +521,7 @@ class TestRecordComparison(unittest.TestCase):
         )
         difference = wall_one.diff(wall_two)
         self.assertEqual(len(difference), len(expected_differences))
-        self.assertRegexpMatches(
+        self.assertRegex(
             str(difference), r'<Diff \[Wall\]; \d+ diff\(s\).*>',
         )
 

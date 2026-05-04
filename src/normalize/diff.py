@@ -25,15 +25,15 @@ from builtins import object, range
 from richenum import OrderedRichEnum
 from richenum import OrderedRichEnumValue
 
-import src.normalize.exc as exc
-from src.normalize.property import SafeProperty
-from src.normalize.coll import Collection
-from src.normalize.coll import DictCollection
-from src.normalize.coll import ListCollection
-from src.normalize.record import Record
-from src.normalize.record import record_id
-from src.normalize.selector import FieldSelector
-from src.normalize.selector import MultiFieldSelector
+import normalize.exc as exc
+from normalize.property import SafeProperty
+from normalize.coll import Collection
+from normalize.coll import DictCollection
+from normalize.coll import ListCollection
+from normalize.record import Record
+from normalize.record import record_id
+from normalize.selector import FieldSelector
+from normalize.selector import MultiFieldSelector
 
 
 class DiffTypes(OrderedRichEnum):

@@ -411,7 +411,7 @@ class TestRecordMarshaling(unittest.TestCase):
         class SomeRecordList(JsonRecordList):
             itemtype = CheeseRecord
 
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
                 exc.JsonCollectionCoerceError, r'array expected',
         ):
             SomeRecordList({"foo": "bar"})
@@ -419,7 +419,7 @@ class TestRecordMarshaling(unittest.TestCase):
         class SomeRecordMap(JsonRecordDict):
             itemtype = CheeseRecord
 
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
                 exc.JsonCollectionCoerceError, r'object expected',
         ):
             SomeRecordMap([1, 2, 3])
@@ -428,12 +428,12 @@ class TestRecordMarshaling(unittest.TestCase):
             some_list = JsonListProperty(of=CheeseRecord)
             some_map = JsonDictProperty(of=CheeseRecord)
 
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
                 exc.JsonConversionError, r'\.some_list\b.*array expected',
         ):
             SomeRecord({"some_list": {"foo": "bar"}})
 
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
                 exc.JsonConversionError, r'\.some_map\b.*object expected',
         ):
             SomeRecord({"some_map": [1, 2, 3]})
@@ -441,7 +441,7 @@ class TestRecordMarshaling(unittest.TestCase):
         class SomeOtherRecord(JsonRecord):
             foo_bar = Property(isa=SomeRecord, json_name="fooBar")
 
-        with self.assertRaisesRegexp(
+        with self.assertRaisesRegex(
             exc.JsonConversionError, r'\.fooBar\.some_list\b.*array expected',
         ):
             SomeOtherRecord({"fooBar": {"some_list": {"foo": "bar"}}})
