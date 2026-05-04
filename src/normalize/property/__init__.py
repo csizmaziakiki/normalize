@@ -304,9 +304,9 @@ class Property(metaclass=MetaProperty):
         the value to insert.
         """
         if self.empty_attr is not None:
-            return ((self.empty_attr, EmptyAuxProp(self)), )
+            return [(self.empty_attr, EmptyAuxProp(self))]
         else:
-            return ()
+            return []
 
 
 class EmptyAuxProp(object):
