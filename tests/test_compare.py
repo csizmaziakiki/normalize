@@ -20,7 +20,7 @@ from builtins import str
 import unittest
 
 from src.normalize.coll import list_of
-from src.normalize.diff import *
+from src.normalize.diff import compare_list_iter, compare_dict_iter, compare_collection_iter, compare_record_iter, DiffOptions, DiffTypes, Collection, MultiFieldSelector  # noqa: E501
 from src.normalize.record import Record
 from src.normalize.record.json import JsonRecord
 from src.normalize.property import Property

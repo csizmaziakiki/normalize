@@ -29,6 +29,7 @@ richenum = ">=1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=4.6.5"
+pylint = "*"
 flake8 = "^7.0.0"
 more-itertools = ">=5.0.0"
 pathlib2 = "*"

@@ -26,7 +26,7 @@ lint: clean
 	${POETRY} run pylint --rcfile=${REPO}/pylint.rc ${REPO}/src/normalize/ ${REPO}/tests/
 
 test: clean
-	${POETRY} run python ${REPO}/tests/run_tests.py
+	${POETRY} run pytest
 
 build:
 	${POETRY} build

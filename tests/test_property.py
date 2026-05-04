@@ -20,7 +20,6 @@ from __future__ import absolute_import
 
 from builtins import zip, range
 import re
-import types
 import unittest
 
 from src.normalize import RecordList

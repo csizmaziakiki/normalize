@@ -18,17 +18,11 @@
 
 from __future__ import absolute_import
 
-from datetime import datetime
-import os.path
 import unittest
-import warnings
 
-from src.normalize import ListProperty
 from src.normalize import Property
-from src.normalize import Record
 from src.normalize import AutoJsonRecord
 from src.normalize import NCAutoJsonRecord
-import src.normalize.exc as exc
 
 
 class TestAutoRecords(unittest.TestCase):

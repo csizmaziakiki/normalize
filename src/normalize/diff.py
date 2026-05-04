@@ -385,7 +385,7 @@ def compare_record_iter(a, b, fs_a=None, fs_b=None, options=None):
     if not options:
         options = DiffOptions()
 
-    if not options.duck_type and type(a) != type(b) and not (
+    if not options.duck_type and type(a) is not type(b) and not (
         a is _nothing or b is _nothing
     ):
         raise TypeError(
@@ -418,7 +418,7 @@ def compare_record_iter(a, b, fs_a=None, fs_b=None, options=None):
             continue
 
         one_side_nothing = (propval_a is _nothing) != (propval_b is _nothing)
-        types_match = type(propval_a) == type(propval_b)
+        types_match = type(propval_a) is type(propval_b)
         comparable = (
             isinstance(propval_a, COMPARABLE) or
             isinstance(propval_b, COMPARABLE)

@@ -391,7 +391,7 @@ class FieldSelector(object):
             other_selector = other.selectors[i]
             if self_selector == other_selector:
                 continue
-            if type(self_selector) != type(other_selector):
+            if type(self_selector) is not type(other_selector):
                 raise TypeError(
                     "Cannot compare incompatible FieldSelectors. "
                     "Incompatibility detected at index: %s for selectors: "

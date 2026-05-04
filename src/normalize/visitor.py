@@ -441,7 +441,7 @@ class VisitorPattern(object):
 
         propget = None
         if is_record:
-            def propget(prop):
+            def propget(prop):  # noqa: F811
                 return value[prop.name]
 
         return propget, generator
@@ -527,7 +527,7 @@ class VisitorPattern(object):
 
         propget = None
         if issubclass(value_type, Record):
-            def propget(prop):
+            def propget(prop):  # noqa: F811
                 return prop
 
         return propget, item_type_generator
