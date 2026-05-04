@@ -26,21 +26,21 @@ import unittest
 from richenum import RichEnum
 from richenum import RichEnumValue
 
-import src.normalize.exc as exc
-from src.normalize.record import Record
-from src.normalize.record.json import from_json
-from src.normalize.record.json import JsonRecord
-from src.normalize.record.json import JsonRecordDict
-from src.normalize.record.json import JsonRecordList
-from src.normalize.record.json import to_json
-from src.normalize.property import Property
-from src.normalize.property import ROProperty
-from src.normalize.property import SafeProperty
-from src.normalize.property.coll import DictProperty
-from src.normalize.property.coll import ListProperty
-from src.normalize.property.json import JsonProperty
-from src.normalize.property.json import JsonDictProperty
-from src.normalize.property.json import JsonListProperty
+import normalize.exc as exc
+from normalize.record import Record
+from normalize.record.json import from_json
+from normalize.record.json import JsonRecord
+from normalize.record.json import JsonRecordDict
+from normalize.record.json import JsonRecordList
+from normalize.record.json import to_json
+from normalize.property import Property
+from normalize.property import ROProperty
+from normalize.property import SafeProperty
+from normalize.property.coll import DictProperty
+from normalize.property.coll import ListProperty
+from normalize.property.json import JsonProperty
+from normalize.property.json import JsonDictProperty
+from normalize.property.json import JsonListProperty
 
 
 class CheeseRecord(Record):

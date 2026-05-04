@@ -19,7 +19,7 @@ import inspect
 import sys
 import unittest
 
-import src.normalize.exc as exc
+import normalize.exc as exc
 
 
 class TestExceptionSystem(unittest.TestCase):

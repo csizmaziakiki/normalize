@@ -23,20 +23,20 @@ import re
 import unittest
 
 from src.normalize import RecordList
-from src.normalize.coll import ListCollection
-import src.normalize.exc as exc
-from src.normalize.identity import record_id
-from src.normalize.record import Record
-from src.normalize.property import LazyProperty
-from src.normalize.property import LazySafeProperty
-from src.normalize.property import make_property_type
-from src.normalize.property import Property
-from src.normalize.property import ROLazyProperty
-from src.normalize.property import ROProperty
-from src.normalize.property import SafeProperty
-from src.normalize.property.coll import ListProperty
-from src.normalize.property.meta import _merge_camel_case_names
-from src.normalize.property.meta import MetaProperty
+from normalize.coll import ListCollection
+import normalize.exc as exc
+from normalize.identity import record_id
+from normalize.record import Record
+from normalize.property import LazyProperty
+from normalize.property import LazySafeProperty
+from normalize.property import make_property_type
+from normalize.property import Property
+from normalize.property import ROLazyProperty
+from normalize.property import ROProperty
+from normalize.property import SafeProperty
+from normalize.property.coll import ListProperty
+from normalize.property.meta import _merge_camel_case_names
+from normalize.property.meta import MetaProperty
 
 
 class TestProperties(unittest.TestCase):

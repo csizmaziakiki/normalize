@@ -17,11 +17,11 @@
 
 import unittest
 
-from src.normalize import Property, Record
-from src.normalize.diff import DiffTypes
-import src.normalize.exc as exc
-from src.normalize.property.coll import DictProperty, ListProperty, list_of, dict_of
-from src.normalize.property.json import JsonDictProperty, JsonListProperty
+from normalize import Property, Record
+from normalize.diff import DiffTypes
+import normalize.exc as exc
+from normalize.property.coll import DictProperty, ListProperty, list_of, dict_of
+from normalize.property.json import JsonDictProperty, JsonListProperty
 
 
 class Item(Record):

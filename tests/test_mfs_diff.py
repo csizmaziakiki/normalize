@@ -24,13 +24,13 @@ import unittest
 from src.normalize import Property
 from src.normalize import Record
 from src.normalize import RecordList
-from src.normalize.diff import DiffOptions
-from src.normalize.property.coll import ListProperty
-from src.normalize.property.types import DateProperty
-from src.normalize.property.types import IntProperty
-from src.normalize.property.types import StringProperty
-from src.normalize.property.types import UnicodeProperty
-from src.normalize.selector import MultiFieldSelector
+from normalize.diff import DiffOptions
+from normalize.property.coll import ListProperty
+from normalize.property.types import DateProperty
+from normalize.property.types import IntProperty
+from normalize.property.types import StringProperty
+from normalize.property.types import UnicodeProperty
+from normalize.selector import MultiFieldSelector
 
 
 class Name(Record):

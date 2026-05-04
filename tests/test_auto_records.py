@@ -20,9 +20,9 @@ from __future__ import absolute_import
 
 import unittest
 
-from src.normalize import Property
-from src.normalize import AutoJsonRecord
-from src.normalize import NCAutoJsonRecord
+from normalize import Property
+from normalize import AutoJsonRecord
+from normalize import NCAutoJsonRecord
 
 
 class TestAutoRecords(unittest.TestCase):

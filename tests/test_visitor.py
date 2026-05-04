@@ -22,10 +22,10 @@ import json
 from time import time
 import unittest
 
-import src.normalize.exc as exc
-from src.normalize.coll import list_of
-from src.normalize.record import Record
-from src.normalize.visitor import VisitorPattern
+import normalize.exc as exc
+from normalize.coll import list_of
+from normalize.record import Record
+from normalize.visitor import VisitorPattern
 
 from .testclasses import (
     acent,

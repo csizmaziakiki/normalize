@@ -30,10 +30,10 @@ from src.normalize import JsonRecordList
 from src.normalize import Property
 from src.normalize import Record
 from src.normalize import RecordList
-from src.normalize.coll import list_of
-from src.normalize.property.coll import DictProperty
-from src.normalize.property.coll import ListProperty
-from src.normalize.selector import MultiFieldSelector
+from normalize.coll import list_of
+from normalize.property.coll import DictProperty
+from normalize.property.coll import ListProperty
+from normalize.selector import MultiFieldSelector
 
 from .testclasses import Person, wall_one
 
@@ -359,7 +359,7 @@ class TestStructableFieldSelector(unittest.TestCase):
         self.assertEqual(oo, OtherObj(objs=[]))
 
     def test_dict(self):
-        from src.normalize.coll import dict_of
+        from normalize.coll import dict_of
         Rolodeck = dict_of(Person)
 
         deck = Rolodeck({
@@ -684,7 +684,7 @@ class TestStructableFieldSelector(unittest.TestCase):
 
     def test_mfs_apply_ops(self):
         from copy import deepcopy
-        from src.normalize.diff import DiffTypes
+        from normalize.diff import DiffTypes
 
         selectors = (
             ("owner",),

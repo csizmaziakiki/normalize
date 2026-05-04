@@ -26,8 +26,8 @@ from src.normalize import ListProperty
 from src.normalize import Property
 from src.normalize import Record
 from src.normalize import V1Property
-import src.normalize.exc as exc
-from src.normalize.visitor import VisitorPattern
+import normalize.exc as exc
+from normalize.visitor import VisitorPattern
 
 
 class TestRecords(unittest.TestCase):
